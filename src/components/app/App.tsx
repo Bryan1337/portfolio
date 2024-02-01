@@ -35,11 +35,11 @@ const aboutData: JSONData = {
 			"Challenges",
 			"AI development",
 		],
-
 		favouriteAnimals: [
 			"Cat",
 			"Dog",
 		],
+		hasDriversLicense: true,
 	},
 }
 
