@@ -130,6 +130,11 @@ section {
 
 body {
     line-height: 1;
+    font-size: 32px;
+}
+
+small {
+    font-size: 16px;
 }
 
 ol,
@@ -528,40 +533,10 @@ textarea {
     background: transparent;
 }
 
-/* Temp css fix for @notistack issue (https://github.com/iamhosseindhv/notistack/issues/440) */
-.SnackbarContent-root {
-    border-left: 8px solid;
-    font-size: 16px;
-    font-weight: 400;
-    background: rgb(34, 34, 34) !important;
-    color: #fff;
-}
-
-.SnackbarItem-variantSuccess {
-    border-color: #43a047;
-}
-
-.SnackbarItem-variantError {
-    border-color: #d32f2f;
-}
-
-.SnackbarItem-variantWarning {
-    border-color: #ff9800;
-}
-
-.SnackbarItem-variantInfo {
-    border-color: rgb(123, 155, 251);
-}
-
 #root {
     height: 100%;
     font-family: Consolas;
     background-color: #1F1F1F;
-}
-
-body {
-    font-family: 'OSRS' !important;
-    font-size: 32px;
 }
 
 h1 {
@@ -575,19 +550,7 @@ strong {
 }
 
 p {
-    color: #9CDCFE;
-    font-size: 28px;
-}
-
-small {
-    font-size: 20px;
-    opacity: 0.66
-}
-
-.input-base {
-    font-family: 'OSRS Small' !important;
-    font-size: 22px !important;
-    padding: 0 16px;
+    font-size: 32px;
 }
 
 @media screen and (max-width: 768px) {
