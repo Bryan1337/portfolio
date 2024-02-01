@@ -13,7 +13,7 @@ interface JSONDataObject {
 	[key: string]: JSONData;
 }
 
-type JSONData = string | number | boolean | JSONDataObject | JSONData[];
+export type JSONData = string | number | boolean | JSONDataObject | JSONData[];
 
 interface JSONViewerDataProps {
 	data: JSONData;

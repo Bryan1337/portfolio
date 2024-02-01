@@ -1,18 +1,26 @@
 import CodeIcon from '@mui/icons-material/Code';
-import InfoIcon from '@mui/icons-material/Info';
-import { IconButton, Tooltip } from '@mui/material';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
+import { IconButton } from '@mui/material';
 import 'Components/app/App.css';
-import JSONTreeViewer from 'Components/json/JSONTreeViewer';
+import JSONTreeViewer, { JSONData } from 'Components/json/JSONTreeViewer';
+import AppTooltip from 'Components/tooltip/AppTooltip';
 import { calculateAge } from 'Scripts/timeHelper';
-import React from 'react';
+import React, { useState } from 'react';
 
 
-const jsonData = {
+const aboutData: JSONData = {
 	about: {
 		name: "Bryan Overduin",
 		email: "bryan@overdu.in",
 		city: "Leiden",
 		age: calculateAge(new Date("1992-09-25")),
+		links: {
+			website: "https://bryan.overduin.in",
+			linkedin: "https://www.linkedin.com/in/bryan-overduin/",
+			github: "https://github.com/Bryan1337",
+			gitlab: "https://gitlab.com/Overduin",
+		},
 		hobbies: [
 			"Games",
 			"Building things",
@@ -22,21 +30,21 @@ const jsonData = {
 		interests: [
 			"Automation",
 			"Music theory",
-			"Fromsoftware games (Theyre really good, seriously)",
-			"Exercising",
-			"Challenging myself",
-			"AI",
+			"Fromsoftware games",
+			"Exercise",
+			"Challenges",
+			"AI development",
 		],
-		links: {
-			gitHub: "https://github.com/Bryan1337",
-			gitLab: "https://gitlab.com/Overduin",
-		},
+
 		favouriteAnimals: [
 			"Cat",
 			"Dog",
 		],
 	},
-	skills: {
+}
+
+const experienceData: JSONData = {
+	experience: {
 		cloud: {
 			AWS: [
 				"ECS",
@@ -44,6 +52,12 @@ const jsonData = {
 				"Route53",
 				"S3",
 				"CloudFront",
+				"CloudWatch",
+				"SQS",
+				"CDK",
+				"CodeBuild",
+				"CodeDeploy",
+				"CodePipeline",
 			]
 		},
 		frontend: {
@@ -79,6 +93,7 @@ const jsonData = {
 			frameworks: [
 				"Yii2",
 				"Laravel",
+				"Express"
 			],
 			testing: [
 				"Codeception",
@@ -88,11 +103,11 @@ const jsonData = {
 		general: {
 			spokenLanguages: [
 				"Dutch",
-				"English"
+				"English (Fluent)"
 			],
 			building: [
-				"Java",
-				"Python",
+				"Java (Hobby)",
+				"Python (Hobby)",
 			],
 			versionControl: [
 				"Git",
@@ -103,24 +118,33 @@ const jsonData = {
 			other: [
 				"Linux",
 				"Scrum",
-
 			]
-		}
+		},
+		education: [
+			"BSc Computer Science (Hogeschool Leiden 2014-2019)",
+			"General Media developer (ROC Leiden 2010-2014)",
+		],
+		work: [
+			"Full stack/Front-end developer @ Sendsteps (2019-2024)",
+		]
 	},
+}
+
+const projectsData: JSONData = {
 	projects: {
 		personal: [
 			"Automation scripts (Runescape bots)",
-			"Rush hour",
-			"ChatGPT whatsapp bot",
+			"Rush hour (Github)",
+			"ChatGPT whatsapp bot (Github)",
+			"Personal portfolio website (This one)",
+			"Portfolio website for a friend (Github)",
+		],
+		professional: [
+			"ReactJS webapplication (Sendsteps)",
+			"NodeJS queueing system (Sendsteps)",
+			"Yii2 API (Sendsteps)",
 		]
 	},
-	education: [
-		"BSc Computer Science (Hogeschool Leiden 2014-2019)",
-		"General Media developer (ROC Leiden 2010-2014)",
-	],
-	workExperience: [
-		"Full stack/Front-end developer @ Sendsteps (2019-2024)",
-	]
 }
 
 const TopBar = () => {
@@ -134,16 +158,22 @@ const TopBar = () => {
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
+			backgroundColor: '#181818',
 		}} >
 			<small>
 				Portfolio:// Bryan Overduin
 			</small>
 		</div>
 	)
-
 }
 
-const SideBar = () => {
+interface SideBarProps {
+	setJsonData: (jsonData: JSONData) => void;
+}
+
+const SideBar = ({
+	setJsonData,
+}: SideBarProps) => {
 
 	return (
 		<div style={{
@@ -153,30 +183,54 @@ const SideBar = () => {
 			borderTop: 'none',
 			paddingTop: 16,
 			textAlign: 'center',
+			backgroundColor: '#181818',
 		}}>
-			<Tooltip title="Projects" arrow placement="right">
-				<IconButton color="inherit">
+			<AppTooltip title="About" arrow placement="right">
+				<IconButton
+					onClick={() => setJsonData(aboutData)}
+					color="inherit">
+					<PsychologyAltIcon color="inherit" />
+				</IconButton>
+			</AppTooltip>
+			<div style={{ paddingTop: 16 }} />
+			<AppTooltip title="Experience" arrow placement="right">
+				<IconButton
+					onClick={() => setJsonData(experienceData)}
+					color="inherit">
 					<CodeIcon color="inherit" />
 				</IconButton>
-			</Tooltip>
+			</AppTooltip>
 			<div style={{ paddingTop: 16 }} />
-			<Tooltip title="About" arrow placement="right">
-				<IconButton color="inherit">
-					<InfoIcon color="inherit" />
+			<AppTooltip title="Projects" arrow placement="right">
+				<IconButton
+					onClick={() => setJsonData(projectsData)}
+					color="inherit">
+					<ConstructionIcon color="inherit" />
 				</IconButton>
-			</Tooltip>
+			</AppTooltip>
+			<div style={{ paddingTop: 16 }} />
 		</div>
 	)
 }
 
-const AppWrapper = ({ children }) => {
+interface AppWrapperProps {
+	setJsonData: (jsonData: JSONData) => void;
+	children: React.ReactNode;
+}
+
+const AppWrapper = ({
+	children,
+	setJsonData,
+}: AppWrapperProps) => {
 
 	return (
 		<div style={{ height: '100%', overflow:'hidden'}}>
 			<TopBar />
 			<div style={{  height: 'calc(100% - 64px)' }}>
 				<div style={{ display: 'flex', height: '100%' }}>
-					<SideBar />
+					<SideBar
+						setJsonData={setJsonData}
+					/>
 					<div style={{
 						padding: 64,
 						height: 'calc(100% - 128px)',
@@ -193,8 +247,10 @@ const AppWrapper = ({ children }) => {
 
 const App = () => {
 
+	const [jsonData, setJsonData] = useState<JSONData>(aboutData);
+
 	return (
-		<AppWrapper>
+		<AppWrapper setJsonData={setJsonData}>
 			<JSONTreeViewer
 				data={jsonData}
 			/>
