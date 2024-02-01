@@ -7,8 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'js/puro_puro_bundle.[id].js',
-        chunkFilename: 'js/puro_puro_chunk[name].[contenthash].js',
+        filename: 'js/portfolio_bundle.[id].js',
+        chunkFilename: 'js/portfolio_chunk[name].[contenthash].js',
         clean: true,
     },
     stats: {

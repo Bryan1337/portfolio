@@ -11,8 +11,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
-        filename: 'js/puro_puro_bundle.[name].js',
-        chunkFilename: 'js/puro_puro_chunk.[name].js',
+        filename: 'js/portfolio_bundle.[name].js',
+        chunkFilename: 'js/portfolio_chunk.[name].js',
     },
     mode: 'development',
     devtool: 'source-map',
