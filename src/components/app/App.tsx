@@ -58,7 +58,11 @@ const experienceData: JSONData = {
 				"CodeBuild",
 				"CodeDeploy",
 				"CodePipeline",
-			]
+			],
+			other: [
+				"Docker",
+				"Static site hosting",
+			],
 		},
 		frontend: {
 			building: [
@@ -69,19 +73,23 @@ const experienceData: JSONData = {
 				"(S)CSS/Less/JSS",
 			],
 			frameworks: [
-				"ReactJS",
+				"React",
 				"Vue",
 				"Next/Nuxt",
 				"Redux",
-				"MaterialUI",
+				"Material UI",
 				"Vuetify",
 				"Bootstrap",
 				"Storybook",
 			],
+			recent: [
+				"Vue dashboards for personal automation tooling",
+				"Playable Rush Hour puzzle game in React",
+			],
 			testing: [
 				"Cypress",
 				"Selenium",
-				"Browserstack",
+				"BrowserStack",
 				"Vitest",
 			]
 		},
@@ -89,7 +97,8 @@ const experienceData: JSONData = {
 			building: [
 				"Node.js",
 				"TypeScript",
-				"Websockets",
+				"WebSockets",
+				"MQTT",
 				"REST",
 				"SQL",
 				"Docker",
@@ -100,11 +109,26 @@ const experienceData: JSONData = {
 				"Laravel",
 				"Express"
 			],
+			recent: [
+				"Node/Express APIs and Socket.IO services for automation dashboards",
+				"Discord and DeepL API integration prototypes",
+				"GraphQL/Apollo backend for a game prototype",
+				"Java-based automation experiements",
+			],
 			testing: [
 				"Codeception",
 				"Unit testing",
-				"Pytest"
+				"Pytest",
 			]
+		},
+		personalProjects: {
+			automation: [
+				"Automation dashboards, APIs, and script tooling",
+				"Automation plugin and client experiments",
+			],
+			games: [
+				"Rush Hour puzzle game",
+			],
 		},
 		general: {
 			spokenLanguages: [
@@ -114,6 +138,7 @@ const experienceData: JSONData = {
 			building: [
 				"Java (Hobby)",
 				"Python (Hobby)",
+				"Go (Hobby)",
 			],
 			versionControl: [
 				"Git",
@@ -124,6 +149,7 @@ const experienceData: JSONData = {
 			other: [
 				"Linux",
 				"Scrum",
+				"Prototyping",
 			]
 		},
 		education: [
@@ -132,7 +158,7 @@ const experienceData: JSONData = {
 		],
 		work: [
 			"Full stack/Front-end developer @ Sendsteps (2019-2024)",
-			"Front-end developer @ Lotify (2024-now)"
+			"Front-end developer @ Lotify (2024-present)"
 		]
 	},
 }
@@ -140,16 +166,18 @@ const experienceData: JSONData = {
 const projectsData: JSONData = {
 	projects: {
 		personal: [
-			"Automation scripts (Runescape bots)",
-			"Rush hour (Github)",
-			"ChatGPT whatsapp bot (Github)",
-			"Personal portfolio website (This one)",
-			"Portfolio website for a friend (Github)",
+			"Automation dashboards and APIs (React/Vue, Node.js, Socket.IO, MySQL, AWS CDK)",
+			"Rush Hour puzzle game (React, Redux, Material UI, AWS S3)",
+			"3D card generator proof of concept (React, Vite, Three.js)",
+			"RuneLite and DreamBot tooling experiments (Java, Gradle, scripting APIs)",
+			"Discord and DeepL integration prototypes (Vue, Express, TypeScript)",
 		],
 		professional: [
-			"ReactJS webapplication (Sendsteps)",
-			"NodeJS queueing system (Sendsteps)",
+			"React webapplication (Sendsteps)",
+			"Node.js queueing/realtime systems (Sendsteps)",
 			"Yii2 API (Sendsteps)",
+			"Vue/Vite front-end work (Lotify)",
+			"Component-focused UI work (Lotify)",
 		]
 	},
 }
