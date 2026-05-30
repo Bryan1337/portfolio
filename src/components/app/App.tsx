@@ -212,7 +212,7 @@ const SideBar = ({
 
 	const openRushHourUrl = () => {
 
-		window.open("http://rush-hour.overdu.in.s3-website-us-east-1.amazonaws.com/", "_blank");
+		window.open("https://rush-hour.overdu.in/", "_blank");
 	}
 
 	return (
