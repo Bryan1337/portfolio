@@ -1,5 +1,6 @@
 import CodeIcon from '@mui/icons-material/Code';
 import ConstructionIcon from '@mui/icons-material/Construction';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 import { IconButton } from '@mui/material';
 import 'Components/app/App.css';
@@ -8,7 +9,6 @@ import AppTooltip from 'Components/tooltip/AppTooltip';
 import { calculateAge } from 'Scripts/timeHelper';
 import React, { useState } from 'react';
 
-
 const aboutData: JSONData = {
 	about: {
 		name: "Bryan Overduin",
@@ -16,7 +16,7 @@ const aboutData: JSONData = {
 		city: "Leiden",
 		age: calculateAge(new Date("1992-09-25")),
 		links: {
-			website: "https://bryan.overduin.in",
+			website: "https://bryan.overdu.in/",
 			linkedin: "https://www.linkedin.com/in/bryan-overduin/",
 			github: "https://github.com/Bryan1337",
 			gitlab: "https://gitlab.com/Overduin",
@@ -65,13 +65,16 @@ const experienceData: JSONData = {
 				"HTML5",
 				"TypeScript",
 				"Webpack",
+				"Vite",
 				"(S)CSS/Less/JSS",
 			],
 			frameworks: [
 				"ReactJS",
-				"NextJS",
+				"Vue",
+				"Next/Nuxt",
 				"Redux",
 				"MaterialUI",
+				"Vuetify",
 				"Bootstrap",
 				"Storybook",
 			],
@@ -79,6 +82,7 @@ const experienceData: JSONData = {
 				"Cypress",
 				"Selenium",
 				"Browserstack",
+				"Vitest",
 			]
 		},
 		backend: {
@@ -89,6 +93,7 @@ const experienceData: JSONData = {
 				"REST",
 				"SQL",
 				"Docker",
+				"GraphQL",
 			],
 			frameworks: [
 				"Yii2",
@@ -97,7 +102,8 @@ const experienceData: JSONData = {
 			],
 			testing: [
 				"Codeception",
-				"Unit testing"
+				"Unit testing",
+				"Pytest"
 			]
 		},
 		general: {
@@ -126,6 +132,7 @@ const experienceData: JSONData = {
 		],
 		work: [
 			"Full stack/Front-end developer @ Sendsteps (2019-2024)",
+			"Front-end developer @ Lotify (2024-now)"
 		]
 	},
 }
@@ -175,6 +182,11 @@ const SideBar = ({
 	setJsonData,
 }: SideBarProps) => {
 
+	const openRushHourUrl = () => {
+
+		window.open("http://rush-hour.overdu.in.s3-website-us-east-1.amazonaws.com/", "_blank");
+	}
+
 	return (
 		<div style={{
 			width: 64,
@@ -206,6 +218,14 @@ const SideBar = ({
 					onClick={() => setJsonData(projectsData)}
 					color="inherit">
 					<ConstructionIcon color="inherit" />
+				</IconButton>
+			</AppTooltip>
+			<div style={{ paddingTop: 16 }} />
+			<AppTooltip title="Play Rush Hour (Puzzle game, opens in new window)" arrow placement="right">
+				<IconButton
+					onClick={() => openRushHourUrl()}
+					color="inherit">
+					<LocalShippingIcon color="inherit" />
 				</IconButton>
 			</AppTooltip>
 			<div style={{ paddingTop: 16 }} />

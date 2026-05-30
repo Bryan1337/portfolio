@@ -5,12 +5,14 @@ interface JSONTreeValueWrapperProps {
 }
 
 const JSONTreeValueWrapper = ({ children }: JSONTreeValueWrapperProps) => (
-	<div style={{
-		lineHeight: 1.2,
-		paddingLeft: 48,
-	}}>
+	<div
+		style={{
+			lineHeight: 1.2,
+			paddingLeft: 48,
+			borderLeft: '2px solid #2D2D2D',
+		}}>
 		{children}
 	</div>
-);
+)
 
 export default JSONTreeValueWrapper;
